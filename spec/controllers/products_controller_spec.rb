@@ -22,6 +22,8 @@ RSpec.describe ProductsController, :type => :controller do
       expect(assigns(:products)).to match_array([product1, product2])
     end
 
+    
+
   end
 
 
