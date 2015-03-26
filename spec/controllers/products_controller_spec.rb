@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ProductsController, :type => :controller do
 
+  login_user
+
   describe '#index' do
 
     before do
@@ -19,7 +21,6 @@ RSpec.describe ProductsController, :type => :controller do
     it 'loads all products' do
       product1, product2 = Product.create, Product.create
       get :index
-      puts assigns(:products)
       expect(assigns(:products)).to match_array([product1, product2])
     end
 

@@ -8,6 +8,9 @@ end
 # devise all the users
 gem 'devise'
 
+gem 'factory_girl'
+gem 'factory_girl_rails'
+
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
