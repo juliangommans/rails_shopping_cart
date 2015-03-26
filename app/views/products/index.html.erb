@@ -1,5 +1,10 @@
 <h1> Booyakasha </h1>
-<ul>
+<ul>  it 'loads all products' do
+      product1, product2 = Product.create!, Product.create!
+      get :index
+      expect(assigns(:products)).to match_array([product1, product2])
+    end
+
 <% @products.each do |product| %>
   <li><%= product.name %>
   <%= product.price %></li>

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Rspec Rails
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 # devise all the users
