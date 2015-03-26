@@ -1,11 +1,19 @@
-require_relative 'spec_test_helper'
+#require_relative 'spec_test_helper'
+require_relative './support/controller_helpers'
 require 'devise'
 
 RSpec.configure do |config|
 
-  config.include Devise::TestHelpers, :type => :controller
+  config.include ControllerHelpers, type: :controller
+  Warden.test_mode!
 
-  config.extend SpecTestHelper, :type => :controller
+  config.after do
+    Warden.test_reset!
+  end
+
+
+
+ # config.extend SpecTestHelper, :type => :controller
 
   config.expect_with :rspec do |expectations|
 
