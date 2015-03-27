@@ -3,7 +3,7 @@ require 'devise'
 
 RSpec.configure do |config|
 
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, type: :controller
 
   config.extend SpecTestHelper, :type => :controller
 

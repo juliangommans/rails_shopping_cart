@@ -1,12 +1,8 @@
 <h1> Booyakasha </h1>
-<ul>  it 'loads all products' do
-      product1, product2 = Product.create!, Product.create!
-      get :index
-      expect(assigns(:products)).to match_array([product1, product2])
-    end
-
+<ul> 
 <% @products.each do |product| %>
-  <li><%= product.name %>
+  <li><%= link_to product.name, show_product_path(product.id) %>
   <%= product.price %></li>
+  <%= button_to 'index', add_product_to_cart_path(product.id) %>
 <%end%>
 </ul>

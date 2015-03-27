@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150325041143) do
   end
 
   create_table "purchases", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "order_id"
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"

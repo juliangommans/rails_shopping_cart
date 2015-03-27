@@ -1,3 +1,4 @@
 class Purchase < ActiveRecord::Base
-  has_many :products, :orders
+  has_many :products
+  has_many :orders
 end
