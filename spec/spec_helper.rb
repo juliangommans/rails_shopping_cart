@@ -1,7 +1,9 @@
-require_relative 'spec_test_helper'
+#require_relative 'spec_test_helper'
+require_relative './support/controller_helpers'
 require 'devise'
 
 RSpec.configure do |config|
+
 
   config.include Devise::TestHelpers, type: :controller
 

@@ -3,13 +3,19 @@ source 'https://rubygems.org'
 # Rspec Rails
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'vcr'
+end
+
+group :test do
+  gem 'webmock'
 end
 
 # devise all the users
 gem 'devise'
-
-gem 'factory_girl'
-gem 'factory_girl_rails'
 
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
