@@ -1,0 +1,8 @@
+<h1> Welcome to your shopping cart - your total is $ <%= @total %></h1>
+<br>
+<% @products.each do |product| %>
+<p><%= product.name %>
+<%= product.pretty_price %></p>
+<% end %>
+
+<%= button_to 'Buy cart', purchase_order_path %>

@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   def index
     redirect_to new_user_registration_path unless user_signed_in?
     @products = Product.all
+    @total = find_total
   end
 
   def new
@@ -11,21 +12,15 @@ class ProductsController < ApplicationController
   end
 
   def show
-  	@product = Product.find(params[:id])
+  	@product = find_product
+    @total = find_total
   end
 
   def add
   	@user = current_user
-  	Order.create(user_id: @user.id) unless @user.order
-  	@user.reload
-		if @order = @user.order.find_by(bought: false)
-			Purchase.create(product_id: params[:id], order_id: @order.id)
-  	else
-  		Order.create(user_id: @user.id)
-  		@user.reload
-  		Purchase.create(product_id: params[:id], order_id: @order.id)
-  	end
+  	find_product.current_order(@user)
   	redirect_to root_url
   end
+
 
 end

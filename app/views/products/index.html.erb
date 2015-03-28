@@ -1,8 +1,9 @@
-<h1> Booyakasha </h1>
+<h1> Booyakasha - current total = $ <%= @total %></h1>
+<%= link_to 'Checkout', show_cart_path %>
 <ul> 
 <% @products.each do |product| %>
   <li><%= link_to product.name, show_product_path(product.id) %>
-  <%= product.price %></li>
-  <%= button_to 'index', add_product_to_cart_path(product.id) %>
+  <%= product.pretty_price %></li>
+  <%= button_to 'Purchase', add_product_to_cart_path(product.id) %>
 <%end%>
 </ul>
